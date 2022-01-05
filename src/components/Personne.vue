@@ -39,19 +39,33 @@
           name="city"
           placeholder="Ville"
         /><br />
+
+        <!-- A INCLURE DANS LE FORM -->
+        <button class="badge badge-danger mr-2" @click="deletePersonne">
+          Supprimer
+        </button>
+
+        <!-- A INCLURE DANS LE FORM -->
+
+        <button
+          type="submit"
+          class="badge badge-success"
+          @click="updatePersonne"
+        >
+          Modifier
+        </button>
+        <p><br />{{ message }}</p>
       </div>
-      <!-- A INCLURE DANS LE FORM -->
-      <button class="badge badge-danger mr-2" @click="deletePersonne">
-        Supprimer
-      </button>
 
-      <!-- A INCLURE DANS LE FORM -->
-
-      <button type="submit" class="badge badge-success" @click="updatePersonne">
-        Modifier
-      </button>
-
-      <p><br />{{ message }}</p>
+      <div v-else>
+        <div class="alert alert-danger alert-dismissible fade show text-center" >
+          <strong>Error!</strong> <br />Cette personne n'existe pas, veuillez
+          <a href="http://localhost:8081/">retourner à l'accueil</a>
+        </div>
+        <p>
+          <br />
+        </p>
+      </div>
     </div>
   </div>
 </template>
